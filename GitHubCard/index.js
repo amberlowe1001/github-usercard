@@ -24,7 +24,6 @@
           user, and adding that card to the DOM.
 */
 
-const followersArray = ['jvillalp','mrzacsmith','caw44200'];
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -57,53 +56,46 @@ const followersArray = ['jvillalp','mrzacsmith','caw44200'];
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
-  function createCard(user) {
-    const newCard = document.createElement('div'),
-          newImage = document.createElement('img'),
+const followersArray = ['jvillalp', 'mrzacsmith', 'caw44200'];
 
-         newUserName = document.createElement('h3'),
-          newCardInfo = document.createElement('div'),
-          newLocation = document.createElement('p'),
-          newProfile = document.createElement('p'),
-          newAddress = document.createElement('a'),
-          newUserFollowers = document.createElement('p'),
-          newUserFollowing = document.createElement('p'),
-          newBioUsers = document.createElement('p')
+function createCard(imgUrl) {
+  const newCard = document.createElement('div'),
+    newImage = document.createElement('img'),
+    newUserName = document.createElement('h3'),
+    newCardInfo = document.createElement('div'),
+    newLocation = document.createElement('p'),
+    newProfile = document.createElement('p'),
+    newAddress = document.createElement('a'),
+    newUserFollowers = document.createElement('p'),
+    newUserFollowing = document.createElement('p'),
+    newBioUsers = document.createElement('p')
 
-          newImage.append(card);
-          newCard.append(card-info);
-          newLocation.append(card-info);
-          newProfile. append(card-info);
-          newAddress.append(card-info);
-          newUserFollowers.append(card-info);
-          newUserFollowing.append(card-info);
-          newBiosUsers.append(card-info);
+  newCard.append(newImage);
+
+  const card = document.querySelector('.cards');
 
 
+  newUserName.textContent = 'name: Username';
+  newLocation.textContent = 'user: location';
+  newProfile.textContent = 'user: profile';
+  newAddress.textContent = 'user: address';
+  newUsersFollowers = 'user: following';
+  newUsersFollowers = 'users:followers';
+  newBioUsers = 'users:bio';
+
+  newImage.src = imgUrl;
+  newImage.classList.add('card');
+  newCard.classlist.add('card');
+  newCardInfo.classlist.add('card-info')
+  newUserName.classlist.add('card-info');
+  newProfile.classList.add('card-info')
+  return newCard;
+
+}
 
 
-newUserName.textContent ='name: Username';
-newLocation.textContent ='user: location';
-newProfile.textContent = 'user: profile';
-newAddress.textContent = 'user: address';
-newUsersFollowers = 'user: following';
-newUsersFollowers = 'users:followers';
-newBioUsers = 'users:bio';
+axios.get('https://api.github.com/users/' + user)
+  .then(response => {
+    console.log(response);
 
-newImage.src = imgUrl;
-newImage.classList.add('card');
-newCard.classlist.add('card');
-newCardInfo.classlist.add('card-info')
-newUserName.classlist.add('card-info');
-newProfile.classList.add('card-info')
-return newCard;
-
-  }
-
-
-axios.get('https://api.github.com/users/ amberlowe1001');
-.then(followersArray => {
-  console.log(response);
-  response.data.message.forEach(item =>{
-    const
   })
